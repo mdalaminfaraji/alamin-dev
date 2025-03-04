@@ -15,7 +15,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="space-y-4"
           >
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl/none animate-gradient">
               {personalInfo.name}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground">
@@ -40,18 +40,30 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-base"
+              className="glow bg-primary hover:bg-primary/90 text-base relative overflow-hidden group"
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             >
-              View Projects
+              <span className="relative z-10">View Projects</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-[#FF0080] to-[#7928CA]"
+                initial={{ x: "100%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.3 }}
+              />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-base"
+              className="glow text-base group relative overflow-hidden"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Contact Me
+              <span className="relative z-10 group-hover:text-white transition-colors">Contact Me</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-[#7928CA] to-[#FF0080]"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.3 }}
+              />
             </Button>
           </motion.div>
         </div>

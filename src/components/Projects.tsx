@@ -17,7 +17,7 @@ export default function Projects() {
           className="space-y-10"
         >
           <div className="space-y-2 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl animate-gradient">
               Featured Projects
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground">
@@ -33,21 +33,32 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
               >
-                <Card className="overflow-hidden">
-                  <div className="relative h-48 bg-muted">
-                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                <Card className="interactive-card overflow-hidden">
+                  <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                    <span className="text-4xl font-bold text-primary/50">
                       {project.title[0]}
-                    </div>
+                    </span>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-[#FF0080]/20 to-[#7928CA]/20"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </div>
                   <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                    <CardTitle className="text-xl">{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline">
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="bg-secondary/50 hover:bg-primary/20 transition-colors"
+                        >
                           {tech}
                         </Badge>
                       ))}
