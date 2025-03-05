@@ -33,7 +33,10 @@ export default function About() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Badge variant="secondary" className="px-3 py-1 text-sm">
+                <Badge
+                  variant="outline"
+                  className="px-3 py-1 text-sm text-white"
+                >
                   {skill}
                 </Badge>
               </motion.div>

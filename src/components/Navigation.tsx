@@ -5,11 +5,9 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -47,9 +45,9 @@ export default function Navigation() {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="#home" className="text-xl font-bold">
-          Alamin Faraji
+          Md Alamin Faraji
         </Link>
 
         {/* Desktop Navigation */}

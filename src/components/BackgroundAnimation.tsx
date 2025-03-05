@@ -1,66 +1,94 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function BackgroundAnimation() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 30, stiffness: 100 };
-  const moveX = useSpring(mouseX, springConfig);
-  const moveY = useSpring(mouseY, springConfig);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      mouseX.set(clientX - window.innerWidth / 2);
-      mouseY.set(clientY - window.innerHeight / 2);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
+  const opacity = useTransform(scrollY, [0, 300], [0.8, 0.3]);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Gradient Orbs */}
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full opacity-30 blur-3xl"
+    <div className="fixed inset-0 -z-50 overflow-hidden bg-[#030014]/90">
+      {/* Floating Gradient Orbs */}
+      <div
+        className="absolute w-[500px] h-[500px] rounded-full opacity-20 blur-3xl animate-float-slow"
         style={{
           background: "linear-gradient(to right, #FF0080, #7928CA)",
-          top: "50%",
+          top: "30%",
           left: "25%",
-          transform: "translate(-50%, -50%)",
-          x: moveX,
-          y: moveY,
         }}
       />
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full opacity-30 blur-3xl"
+      <div
+        className="absolute w-[500px] h-[500px] rounded-full opacity-20 blur-3xl animate-float-slow-reverse"
         style={{
           background: "linear-gradient(to right, #7928CA, #FF0080)",
-          top: "50%",
+          top: "60%",
           left: "75%",
-          transform: "translate(-50%, -50%)",
-          x: moveX,
-          y: moveY,
         }}
       />
 
-      {/* Animated Grid */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]" />
+      {/* Animated Stars */}
+      {Array.from({ length: 30 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-[2px] h-[2px] bg-white rounded-full"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            opacity: Math.random() * 0.3 + 0.1,
+          }}
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.1, 0.3, 0.1],
+          }}
+          transition={{
+            duration: 2 + Math.random() * 3,
+            repeat: Infinity,
+            delay: Math.random() * 2,
+          }}
+        />
+      ))}
 
-      {/* Noise Texture */}
-      <div
-        className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
+      {/* Parallax Grid Lines */}
+      <motion.div 
+        className="absolute inset-0"
+        style={{ y: y1, opacity }}
+      >
+        <div className="absolute inset-0 bg-grid-white/[0.01] bg-[length:50px_50px]" />
+      </motion.div>
+
+      {/* Floating Particles */}
+      {Array.from({ length: 15 }).map((_, i) => (
+        <motion.div
+          key={`particle-${i}`}
+          className="absolute w-1 h-1 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-full"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 4 + Math.random() * 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+
+      {/* Gradient Overlays */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"
+        style={{ opacity }}
       />
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background/90"
+        style={{ y: y2 }}
+      />
     </div>
   );
 }
