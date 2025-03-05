@@ -29,7 +29,7 @@ export default function Contact() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <Card>
+            <Card className="border border-purple-400">
               <CardContent className="p-6">
                 <form className="space-y-4">
                   <div className="space-y-2">
@@ -49,10 +49,10 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border border-purple-400">
               <CardContent className="p-6 space-y-6">
                 <div className="flex items-center space-x-4">
-                  <Mail className="h-6 w-6 text-muted-foreground" />
+                  <Mail className="h-6 w-6 text-white" />
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-muted-foreground">
@@ -61,7 +61,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <Phone className="h-6 w-6 text-muted-foreground" />
+                  <Phone className="h-6 w-6 text-white" />
                   <div>
                     <p className="font-medium">Phone</p>
                     <p className="text-muted-foreground">
@@ -70,7 +70,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <MapPin className="h-6 w-6 text-muted-foreground" />
+                  <MapPin className="h-6 w-6 text-white" />
                   <div>
                     <p className="font-medium">Location</p>
                     <p className="text-muted-foreground">

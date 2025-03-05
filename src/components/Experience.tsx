@@ -33,13 +33,11 @@ export default function Experience() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card>
+                <Card className="border border-purple-400">
                   <CardHeader>
                     <CardTitle className="flex justify-between items-center flex-wrap gap-2">
-                      <span>{exp.position}</span>
-                      <span className="text-sm text-muted-foreground">
-                        {exp.period}
-                      </span>
+                      <span className="text-purple-500">{exp.position}</span>
+                      <span className="text-sm text-white">{exp.period}</span>
                     </CardTitle>
                     <p className="text-muted-foreground">{exp.company}</p>
                   </CardHeader>
