@@ -1,7 +1,13 @@
 "use client";
 
 import { projects } from "@/constants";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
@@ -37,7 +43,7 @@ export default function Projects() {
               >
                 <Card className="interactive-card overflow-hidden">
                   <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-primary/50">
+                    <span className="text-4xl font-bold text-white">
                       {project.title[0]}
                     </span>
                     <motion.div
@@ -48,8 +54,12 @@ export default function Projects() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
+                    <CardTitle className="text-xl text-white">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-white">
+                      {project.description}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
@@ -57,7 +67,7 @@ export default function Projects() {
                         <Badge
                           key={tech}
                           variant="secondary"
-                          className="bg-secondary/50 hover:bg-primary/20 transition-colors"
+                          className="bg-secondary/50 hover:bg-primary/20 transition-colors text-white"
                         >
                           {tech}
                         </Badge>
