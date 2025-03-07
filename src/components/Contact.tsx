@@ -6,9 +6,39 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    try {
+      setIsSubmitting(true);
+
+      // Replace these with your actual EmailJS credentials
+      const serviceId = "service_6xbrkk8";
+      const templateId = "template_fxi8xxr";
+      const publicKey = "wRsL5gZebKGSzVbyC";
+
+      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      formRef.current.reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="py-20">
       <div className="container px-4 md:px-6">
@@ -31,20 +61,44 @@ export default function Contact() {
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="border border-purple-400">
               <CardContent className="p-6">
-                <form className="space-y-4">
+                <form
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
                   <div className="space-y-2">
-                    <Input placeholder="Your Name" />
+                    <Input name="name" placeholder="Your Name" required />
                   </div>
                   <div className="space-y-2">
-                    <Input type="email" placeholder="Your Email" />
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="Your Email"
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <Textarea
+                      name="message"
                       placeholder="Your Message"
                       className="min-h-[150px]"
+                      required
                     />
                   </div>
-                  <Button className="w-full">Send Message</Button>
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-[#7928CA] to-[#FF0080] hover:opacity-90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
+                  </Button>
                 </form>
               </CardContent>
             </Card>

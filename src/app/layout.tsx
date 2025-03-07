@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Alamin Faraji - MERN Stack Developer",
-  description: "Portfolio of Alamin Faraji - MERN Stack Developer from Bangladesh",
+  description:
+    "Portfolio of Alamin Faraji - MERN Stack Developer from Bangladesh",
 };
 
 export default function RootLayout({
@@ -25,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -33,6 +37,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster
+            position="bottom-right"
+            richColors
+            closeButton
+            toastOptions={{ style: { zIndex: 9999 } }}
+          />
         </ThemeProvider>
       </body>
     </html>
