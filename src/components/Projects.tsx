@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+// import Image from "next/image";
 
 export default function Projects() {
   return (
@@ -42,10 +43,21 @@ export default function Projects() {
                 whileHover={{ scale: 1.02 }}
               >
                 <Card className="interactive-card overflow-hidden">
-                  <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-white">
-                      {project.title[0]}
-                    </span>
+                  <div className="relative h-48 overflow-hidden">
+                    {/* {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    ) : ( */}
+                    <div className="h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                      <span className="text-4xl font-bold text-white">
+                        {project.title[0]}
+                      </span>
+                    </div>
+                    {/* )} */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-[#FF0080]/20 to-[#7928CA]/20"
                       initial={{ opacity: 0 }}
