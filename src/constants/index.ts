@@ -23,12 +23,12 @@ import {
 
 export const personalInfo = {
   name: "Md Alamin Faraji",
-  role: "MERN Stack Developer",
+  role: "Web Application Developer",
   phone: "+8801518420973",
   email: "alaminice1617@gmail.com",
   location: "Narail, Bangladesh",
   about:
-    "I am a MERN Stack Developer from Bangladesh with extensive experience in web development. I specialize in creating attractive, fully responsive websites with a focus on user interface and branding. My expertise extends to cloud platforms like AWS, GCP, and deployment tools such as Nginx and PM2.",
+    "I am a Web Application Developer from Bangladesh with extensive experience in web development. I specialize in creating attractive, fully responsive websites with a focus on user interface and branding. My expertise extends to cloud platforms like AWS, GCP, and deployment tools such as Nginx and PM2.",
   skills: [
     { name: "React.js", percentage: 90, icon: FaReact },
     { name: "Next.js", percentage: 85, icon: SiNextdotjs },
@@ -103,23 +103,29 @@ export const projects = [
 
 export const experiences = [
   {
-    company: "TechCorp Solutions",
-    position: "Senior MERN Stack Developer",
-    period: "2022 - Present",
+    company: "NexStack, Singapore",
+    position: "Nextjs React Developer",
+    period: "Jun 2024 - Feb 2025",
     responsibilities: [
-      "Led development of enterprise web applications",
+      "Team Leader of Bangladesh Branch",
+      "Developed responsive web applications",
+      "Assisted Backend Development with Strapi CMS",
       "Mentored junior developers",
+      "Gain knowledge of cloud platforms like AWS, GCP, and deployment tools such as Nginx and PM2",
       "Implemented CI/CD pipelines",
     ],
   },
   {
-    company: "WebDev Agency",
-    position: "Full Stack Developer",
-    period: "2020 - 2022",
+    company: "Raptor The Luxury Brand, Canada",
+    position: "Frontend Developer",
+    period: "July 2023 - June 2024",
     responsibilities: [
       "Developed responsive web applications",
       "Collaborated with design team",
       "Optimized application performance",
+      "Integrated with payment gateway (Stripe)",
+      "Implemented secure authentication and authorization",
+      "Google map integration",
     ],
   },
 ];
