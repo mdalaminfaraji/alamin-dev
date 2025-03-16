@@ -236,8 +236,8 @@ export default function Projects() {
                             Details
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="w-[90vw] max-h-[85vh] overflow-y-auto bg-slate-900 border-slate-800 p-6 sm:p-8">
-                          <DialogClose className="absolute top-0 -right-100 w-5 h-5 rounded-full bg-white">
+                        <DialogContent className="max-w-[70vw] max-h-[85vh] overflow-y-auto bg-slate-900 border-slate-800 p-6 sm:p-8">
+                          <DialogClose className="w-5 h-5 rounded-full bg-white">
                             <XIcon className="h-5 w-5 text-gray-400 hover:text-white" />
                           </DialogClose>
                           <DialogHeader>

@@ -90,8 +90,10 @@ export const projects = [
       "Optimized for accessibility and SEO",
     ],
     isGithubPrivate: true,
-    githubUrlClient: "https://github.com/AlaminFaraji/raptors-cleaning",
-    githubUrlServer: "https://github.com/AlaminFaraji/raptors-cleaning-server",
+    githubUrlClient:
+      "https://github.com/mailtoabusadat/raptorscleaning.com-app",
+    githubUrlServer:
+      "https://github.com/mailtoabusadat/raptorscleaning.com-server",
   },
   {
     id: 2,
@@ -124,8 +126,8 @@ export const projects = [
     ],
     liveUrl: "https://client.pifcapital.sg/events",
     isGithubPrivate: true,
-    githubUrlClient: "https://github.com/AlaminFaraji/pif-capital",
-    githubUrlServer: "https://github.com/AlaminFaraji/pif-capital-server",
+    githubUrlClient: "https://github.com/nexstacksg/pif-client",
+    githubUrlServer: "https://github.com/nexstacksg/pif-be",
   },
   {
     id: 3,
@@ -154,6 +156,35 @@ export const projects = [
     isGithubPrivate: false,
     githubUrlClient: "https://github.com/mdalaminfaraji/youthMedia24-fe",
     githubUrlServer: "https://github.com/mdalaminfaraji/youth-media-24-be",
+  },
+  {
+    id: 4,
+    title: "VanishVote",
+    description:
+      "VanishVote is an anonymous polling application that allows users to create polls that automatically expire after a set time. This repository contains the frontend of the application built with Next.js and Tailwind CSS.",
+    tech: [
+      "Next.js",
+      "Express js",
+      "TailwindCss",
+      "Typescript",
+      "Mongodb",
+      "MOngoose",
+      "Node js",
+    ],
+    image: "/vanishvote.png",
+    features: [
+      "Create Anonymous Polls: Create polls with multiple options that expire after a set time",
+      "Privacy Controls: Set polls to be private (accessible only via direct link) or public",
+      "Result Visibility: Option to hide results until the poll expires",
+      "Share Functionality: Easily share poll links with others",
+      "Real-time Results: See votes updating in real-time",
+      "Mobile Responsive: Works seamlessly on all devices",
+      "No Login Required: Create and vote on polls without an account",
+    ],
+    liveUrl: "https://vanishvote-frontend.vercel.app/",
+    isGithubPrivate: false,
+    githubUrlClient: "https://github.com/mdalaminfaraji/vanishvote-frontend",
+    githubUrlServer: "https://github.com/mdalaminfaraji/vanishvote-backend",
   },
 ];
 
