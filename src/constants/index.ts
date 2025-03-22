@@ -89,6 +89,19 @@ export const projects = [
       "Service Pages: Detailed views of the company's offerings to help users understand and choose the services they need",
       "Optimized for accessibility and SEO",
     ],
+    images: [
+      "/raptor-logo-squre.jpg",
+      "/projects/raptor/raptor1.jpg",
+      "/projects/raptor/raptor2.jpg",
+      "/projects/raptor/raptor3.jpg",
+      "/projects/raptor/raptor4.jpg",
+    ],
+    overview:
+      "Raptor The Luxury Brand is a dedicated cleaning service company based in Canada. The platform serves as a comprehensive showcase of their professional cleaning services, allowing users to browse services, request quotes, and manage their service history. The project focuses on creating an elegant, user-friendly interface that reflects the premium nature of the brand while providing robust functionality for both customers and administrators.",
+    challenges:
+      "The main challenges included implementing a secure booking system, integrating real-time updates for service statuses, and creating an intuitive admin dashboard for managing service requests and team assignments.",
+    solutions:
+      "I implemented a comprehensive booking system with Stripe integration for secure payments, developed a real-time notification system for service updates, and designed a powerful admin dashboard that allows staff to manage everything from service requests to team assignments efficiently.",
     isGithubPrivate: true,
     githubUrlClient:
       "https://github.com/mailtoabusadat/raptorscleaning.com-app",
@@ -124,6 +137,19 @@ export const projects = [
       "Integrated third-party libraries such as @react-pdf/renderer for PDF generation, dayjs for date manipulation, and Zustand for state management.",
       "Optimized user experience by providing real-time feedback on payment status, event progress, and referral code applications with a clean and responsive UI.",
     ],
+    images: [
+      "/logo.webp",
+      "/projects/pif/pif1.jpg",
+      "/projects/pif/pif2.jpg",
+      "/projects/pif/pif3.jpg",
+      "/projects/pif/pif4.jpg",
+    ],
+    overview:
+      "PIF Capital is a financial institution dedicated to helping small and medium enterprises navigate the complexities of capital markets. This platform enables users to book events, manage referrals, and access comprehensive financial resources. The project required a sophisticated booking system with referral code validation and discount calculations.",
+    challenges:
+      "Implementing a secure payment system with Stripe integration, managing complex state across the booking flow, and creating a robust PDF invoice generation system were the main challenges faced during development.",
+    solutions:
+      "I implemented Zustand for state management to handle the complex booking flow, integrated Stripe for secure payments, and used @react-pdf/renderer to create downloadable invoices. The platform also includes real-time validation of referral codes and dynamic discount calculations.",
     liveUrl: "https://client.pifcapital.sg/events",
     isGithubPrivate: true,
     githubUrlClient: "https://github.com/nexstacksg/pif-client",
@@ -152,6 +178,19 @@ export const projects = [
       "Designed a mobile-responsive and user-friendly UI using Next.js and Tailwind CSS for an optimal browsing experience.",
       "Leveraged Strapi CMS for backend management and Zustand for state management to handle articles, comments, and user data efficiently.",
     ],
+    images: [
+      "/youthMedia24.png",
+      "/projects/youth/youth1.jpg",
+      "/projects/youth/youth2.jpg",
+      "/projects/youth/youth3.jpg",
+      "/projects/youth/youth4.jpg",
+    ],
+    overview:
+      "YouthMedia24 is a modern news platform targeting the younger generation with content focused on innovation and technology. The platform features both user-facing news pages and comprehensive admin dashboards for content management. The project aims to keep young minds informed about the latest technological advancements and innovations.",
+    challenges:
+      "Implementing role-based access control, creating efficient content management workflows, and ensuring optimal performance with rich media content were the primary challenges of this project.",
+    solutions:
+      "I used JWT/OAuth for secure authentication, implemented role-based dashboards for content management, and optimized media handling to ensure fast load times even with image-heavy content. Strapi CMS was used for backend management, providing a flexible and powerful content management system.",
     liveUrl: "https://youth-media24-fe.vercel.app/bangla",
     isGithubPrivate: false,
     githubUrlClient: "https://github.com/mdalaminfaraji/youthMedia24-fe",
@@ -181,10 +220,74 @@ export const projects = [
       "Mobile Responsive: Works seamlessly on all devices",
       "No Login Required: Create and vote on polls without an account",
     ],
+    images: [
+      "/projects/vanishvote-1.png",
+      "/projects/vanishvote-2.png",
+      "/projects/vanishvote-3.png",
+    ],
+    overview:
+      "VanishVote is an innovative polling application that allows users to create anonymous polls that automatically expire after a set time. The app is designed with privacy in mind, giving users control over who can see their polls and when results are visible. The project focuses on creating a simple, intuitive interface for quick poll creation and participation.",
+    challenges:
+      "Implementing the auto-expiry functionality, ensuring real-time updates for poll results, and maintaining anonymity while preventing abuse were the main challenges faced during development.",
+    solutions:
+      "I implemented a robust backend system that handles poll expiration through scheduled tasks, used WebSockets for real-time result updates, and designed a clean, intuitive interface that makes poll creation and voting simple and straightforward.",
     liveUrl: "https://vanishvote-frontend.vercel.app/",
     isGithubPrivate: false,
     githubUrlClient: "https://github.com/mdalaminfaraji/vanishvote-frontend",
     githubUrlServer: "https://github.com/mdalaminfaraji/vanishvote-backend",
+  },
+  {
+    id: 5,
+    title: "Admin Panel for Raptor - The Luxury Brand",
+    description:
+      "Admin Panel of Raptor The Luxury Brand, a cutting-edge management tool for a premier Canadian cleaning services company. As part of a team of three developers, I worked on the frontend development of the admin dashboard, ensuring seamless functionality and a user-friendly design.",
+    tech: [
+      "Next.js",
+      "Material UI",
+      "Express",
+      "Node.js",
+      "MySQL",
+      "Redux",
+      "JWT",
+      "NextAuth.js",
+      "stripe",
+      "Google map API",
+      "Hostinger VPS Server",
+    ],
+    image: "/projects/Raptor-1.png",
+    features: [
+      "Admin Dashboard: Quick Links: Simplified access to key functionalities like creating new customers, bookings, invoices, blog posts, webmail, payments, and reports.",
+      "Metrics Overview: Designed cards to display essential metrics,including:Cross-sales, total expenses, and revenue Total jobs (average, completed, canceled, in progress)",
+      "Upcoming payments, total invoices, and customer/provider stats Average customer visits  Last 30 Days Summary: Updated information at a glance.",
+      "Quotes Management: Table View: Designed a quotes table with features like searching, pagination, and Google location direction.",
+      "Quote Details: Integrated property estimation and the ability to convert quotes into bookings.",
+      "Bookings Management: Data Table: Developed the booking table with efficient search and pagination.",
+      "Detailed View: Enhanced booking details for better data insights.",
+      "Invoice Creation: Developed a streamlined invoice creation system to simplify payment tracking.",
+      "Our Team Section: Designed and implemented a section to manage team details effortlessly.",
+      "Reports Section: Created a detailed reports area for tracking operational insights and performance.",
+    ],
+    images: [
+      "/projects/Raptor-1.png",
+      "/projects/Raptor-2.png",
+      "/projects/Raptor-3.png",
+      "/projects/Raptor-4.png",
+      "/projects/Raptor-5.png",
+      "/projects/Raptor-6.png",
+      "/projects/Raptor-7.png",
+    ],
+    overview:
+      "I contributed to the Admin Panel of Raptor The Luxury Brand, a management tool for a leading Canadian cleaning services company. As part of a three-member team, I focused on frontend development, ensuring a seamless and intuitive user experience.",
+    challenges:
+      "I faced dynamically color for border , image background and icon color for admin dashboard reusable card design also I faced invoice creation and payment tracking issues.",
+    solutions:
+      "At First I took help From my senior developer How can i generate this color and then i found out that i can use color alpha packages like color generator to generate color for border , image background and icon color for admin dashboard reusable card design I read stripe docs to understand how to create invoice and payment tracking.",
+    liveUrl: "https://admin.raptorscleaning.com",
+    isGithubPrivate: true,
+    githubUrlClient:
+      "https://github.com/mailtoabusadat/admin.raptorscleaning.com-app",
+    githubUrlServer:
+      "https://github.com/mailtoabusadat/admin.raptorscleaning.com-server",
   },
 ];
 
