@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -17,15 +18,12 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { notFound } from "next/navigation";
 
-export default function ProjectDetailsPage({
-  params,
-}: {
-  params: { projectId: string };
-}) {
+export default function ProjectDetailsPage() {
+  const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const projectId = parseInt(params.projectId);
+  const projectId = parseInt(params.projectId as string);
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
