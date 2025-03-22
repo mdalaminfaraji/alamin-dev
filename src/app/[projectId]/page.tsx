@@ -74,7 +74,7 @@ export default function ProjectDetailsPage({
                 }}
               >
                 <Image
-                  src={project.image}
+                  src={project.images[0]}
                   alt={project.title}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-300"
