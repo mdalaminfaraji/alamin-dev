@@ -289,6 +289,48 @@ export const projects = [
     githubUrlServer:
       "https://github.com/mailtoabusadat/admin.raptorscleaning.com-server",
   },
+  {
+    id: 6,
+    title: "TH Consulting",
+    description:
+      "TH Consulting is a modern web application built with Next.js that provides employment consulting services. The platform offers comprehensive solutions for employment mediation, worker assignment, and employment administration, available in both English and Croatian languages.",
+    tech: [
+      "Next.js",
+      "Tailwind css",
+      "Shadcn",
+      "React js",
+      "Typescript",
+      "framer-motion",
+      "zod",
+    ],
+    image: "/projects/thconsultinglogo.png",
+
+    features: [
+      "Multilingual Support: Full English and Croatian language support, dedicated layouts for each language, easy language switching",
+
+      "Service Categories: Mediation in Employment: Complete employment process handling for foreign workers, Assignment of Workers: Flexible worker rental solutions for specific periods, Employment Administration: Full documentation support for foreign worker employment",
+
+      "User Interface: Modern and responsive design, Interactive navigation with dropdown menus, Service-specific detailed pages, Contact forms for inquiries",
+
+      "Technical Features: Server-side rendering with Next.js 14, Dynamic routing for service pages, Responsive layouts using Tailwind CSS, Optimized images and fonts, SEO-friendly structure",
+    ],
+    images: [
+      "/projects/TH-Consulting-1.png",
+      "/projects/TH-Consulting-2.png",
+      "/projects/TH-Consulting-3.png",
+      "/projects/TH-Consulting-4.png",
+      "/projects/TH-Consulting-5.png",
+      "/projects/TH-Consulting-6.png",
+    ],
+    overview:
+      "TH Consulting is an employment mediation agency that is registered and licensed by the Ministry of Labor of the Republic of Croatia. As your reliable partner, we will help you find suitable staff to create and improve productivity and competitiveness on the labor market.",
+    challenges: "",
+    solutions: "",
+    liveUrl: "https://thconsulting.vercel.app/",
+    isGithubPrivate: false,
+    githubUrlClient: "https://github.com/mdalaminfaraji/thconsulting-fe",
+    githubUrlServer: "",
+  },
 ];
 
 export const experiences = [
